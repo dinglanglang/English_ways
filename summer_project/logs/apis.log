@@ -1,0 +1,69 @@
+2019-08-05 20:00:53,442 [Thread-4:14220] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:04:36,657 [Thread-5:1432] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:05:21,654 [Thread-11:10036] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:15:08,353 [Thread-14:5128] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:16:33,673 [Thread-18:10848] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:16:45,044 [Thread-19:13460] [apis:26] [views:get_mobile_captcha] [ERROR]- Could not find backend 'django_redis.cache.RedisCache': No module named 'django_redis'
+2019-08-05 20:25:26,641 [Thread-23:12128] [apis:26] [views:get_mobile_captcha] [ERROR]- Error 10061 connecting to 192.168.245.157:6379. 由于目标计算机积极拒绝，无法连接。.
+2019-08-05 20:31:43,781 [Thread-4:2280] [apis:26] [views:get_mobile_captcha] [ERROR]- Error 10061 connecting to 192.168.245.157:6379. 由于目标计算机积极拒绝，无法连接。.
+2019-08-05 20:32:50,054 [Thread-7:7356] [apis:26] [views:get_mobile_captcha] [ERROR]- Error 10061 connecting to 192.168.245.157:6379. 由于目标计算机积极拒绝，无法连接。.
+2019-08-05 20:39:17,437 [Thread-10:14884] [apis:26] [views:get_mobile_captcha] [ERROR]- Error 10061 connecting to 192.168.245.157:6379. 由于目标计算机积极拒绝，无法连接。.
+2019-08-05 20:53:24,435 [Thread-4:15168] [apis:26] [views:get_mobile_captcha] [ERROR]- Error 10061 connecting to 192.168.0.112:6379. 由于目标计算机积极拒绝，无法连接。.
+2019-08-05 21:17:44,248 [Thread-5:3216] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是460656
+2019-08-05 21:17:44,248 [Thread-5:3216] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "460656", "mobile": "15570871629"}'
+2019-08-05 21:17:44,962 [Thread-5:3216] [apis:34] [sms:send_sms] [INFO]- 短信发送失败：{"code":"105112","count":"0","create_date":"","mobile":"15570871629","msg":"请求的参数(param)与模板上的变量数量不一致","smsid":"","uid":""}
+2019-08-05 21:17:44,963 [Thread-5:3216] [apis:26] [views:get_mobile_captcha] [ERROR]- 发送短信失败
+2019-08-05 21:19:38,281 [Thread-3:2216] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是836408
+2019-08-05 21:19:38,281 [Thread-3:2216] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "836408", "mobile": "15570871629"}'
+2019-08-05 21:19:38,870 [Thread-3:2216] [apis:34] [sms:send_sms] [INFO]- 短信发送失败：{"code":"105112","count":"0","create_date":"","mobile":"15570871629","msg":"请求的参数(param)与模板上的变量数量不一致","smsid":"","uid":""}
+2019-08-05 21:19:38,871 [Thread-3:2216] [apis:26] [views:get_mobile_captcha] [ERROR]- 发送短信失败
+2019-08-05 21:23:44,710 [Thread-1:9488] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是655403
+2019-08-05 21:23:44,710 [Thread-1:9488] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "655403,300", "mobile": "15570871629"}'
+2019-08-05 21:23:45,342 [Thread-1:9488] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:23:45","mobile":"15570871629","msg":"OK","smsid":"4e9f2368d48197ecaf7697382ef7840a","uid":""}
+2019-08-05 21:25:20,783 [Thread-9:5320] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是873447
+2019-08-05 21:25:20,783 [Thread-9:5320] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "873447,300", "mobile": "15570871629"}'
+2019-08-05 21:25:21,055 [Thread-9:5320] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:25:20","mobile":"15570871629","msg":"OK","smsid":"60283e650214233a154f90ef0b53e7ba","uid":""}
+2019-08-05 21:31:01,726 [Thread-13:13160] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是862385
+2019-08-05 21:31:01,727 [Thread-13:13160] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "862385,300", "mobile": "15570871629"}'
+2019-08-05 21:31:02,030 [Thread-13:13160] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:31:01","mobile":"15570871629","msg":"OK","smsid":"5985d73ed4550ca4900f769e2dbb1c0e","uid":""}
+2019-08-05 21:38:47,982 [Thread-17:10176] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是851365
+2019-08-05 21:38:47,983 [Thread-17:10176] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "851365,300", "mobile": "15570871629"}'
+2019-08-05 21:39:05,208 [Thread-17:10176] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:39:01","mobile":"15570871629","msg":"OK","smsid":"2a1b14bfd3e66621896618720f040660","uid":""}
+2019-08-05 21:48:11,139 [Thread-29:11632] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是336372
+2019-08-05 21:48:11,139 [Thread-29:11632] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "336372,300", "mobile": "15570871629"}'
+2019-08-05 21:48:11,573 [Thread-29:11632] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:48:11","mobile":"15570871629","msg":"OK","smsid":"72cb548832536abefaa4a4b319402acd","uid":""}
+2019-08-05 21:50:37,219 [Thread-9:13652] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是882224
+2019-08-05 21:50:37,219 [Thread-9:13652] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "882224,300", "mobile": "15570871629"}'
+2019-08-05 21:50:37,848 [Thread-9:13652] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:50:37","mobile":"15570871629","msg":"OK","smsid":"06a8f7961fd631e0e1abeb86f32cd9d5","uid":""}
+2019-08-05 21:56:01,237 [Thread-7:9880] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是687865
+2019-08-05 21:56:01,237 [Thread-7:9880] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "687865,300", "mobile": "15570871629"}'
+2019-08-05 21:56:02,143 [Thread-7:9880] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:56:01","mobile":"15570871629","msg":"OK","smsid":"97f82ec0d2c9fd9572e96ba664f0551f","uid":""}
+2019-08-05 21:57:57,040 [Thread-8:14564] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是767028
+2019-08-05 21:57:57,041 [Thread-8:14564] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "767028,300", "mobile": "18975866474"}'
+2019-08-05 21:57:57,261 [Thread-8:14564] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-05 21:57:57","mobile":"18975866474","msg":"OK","smsid":"53e37359faddd68417c673f0faee85e2","uid":""}
+2019-08-06 09:17:37,108 [Thread-21:16028] [apis:26] [views:get_mobile_captcha] [ERROR]- [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2019-08-06 10:33:29,331 [Thread-10:14776] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是352455
+2019-08-06 10:33:29,332 [Thread-10:14776] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "352455,300", "mobile": "18975866474"}'
+2019-08-06 10:33:30,261 [Thread-10:14776] [apis:34] [sms:send_sms] [INFO]- 短信发送失败：{"code":"100005","count":"0","create_date":"","mobile":"18975866474","msg":"发送请求的IP不在白名单内","smsid":"","uid":""}
+2019-08-06 10:33:30,261 [Thread-10:14776] [apis:26] [views:get_mobile_captcha] [ERROR]- 发送短信失败
+2019-08-06 10:35:09,072 [Thread-13:14364] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是820338
+2019-08-06 10:35:09,072 [Thread-13:14364] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "820338,300", "mobile": "18975866474"}'
+2019-08-06 10:35:09,277 [Thread-13:14364] [apis:34] [sms:send_sms] [INFO]- 短信发送失败：{"code":"100005","count":"0","create_date":"","mobile":"18975866474","msg":"发送请求的IP不在白名单内","smsid":"","uid":""}
+2019-08-06 10:35:09,278 [Thread-13:14364] [apis:26] [views:get_mobile_captcha] [ERROR]- 发送短信失败
+2019-08-06 10:36:18,513 [Thread-14:14660] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是367046
+2019-08-06 10:36:18,514 [Thread-14:14660] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "367046,300", "mobile": "15570871629"}'
+2019-08-06 10:36:18,773 [Thread-14:14660] [apis:34] [sms:send_sms] [INFO]- 短信发送失败：{"code":"100005","count":"0","create_date":"","mobile":"15570871629","msg":"发送请求的IP不在白名单内","smsid":"","uid":""}
+2019-08-06 10:36:18,773 [Thread-14:14660] [apis:26] [views:get_mobile_captcha] [ERROR]- 发送短信失败
+2019-08-06 10:37:44,939 [Thread-15:2756] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是513181
+2019-08-06 10:37:44,939 [Thread-15:2756] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "513181,300", "mobile": "18975866474"}'
+2019-08-06 10:37:45,186 [Thread-15:2756] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-06 10:37:45","mobile":"18975866474","msg":"OK","smsid":"38ee2c8cb8fe8ac60c1bf5e03f113b35","uid":""}
+2019-08-06 18:49:38,554 [Thread-49:5196] [apis:22] [views:get_mobile_captcha] [INFO]- 验证码是429728
+2019-08-06 18:49:38,555 [Thread-49:5196] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "429728,300", "mobile": "15570871629"}'
+2019-08-06 18:49:38,784 [Thread-49:5196] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-06 18:49:38","mobile":"15570871629","msg":"OK","smsid":"aeaf4cfbdcb5f02c805622fe0babd946","uid":""}
+2019-08-06 20:40:18,982 [Thread-67:15900] [apis:25] [views:get_mobile_captcha] [INFO]- 验证码是320197
+2019-08-06 20:40:18,982 [Thread-67:15900] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "320197,300", "mobile": "15570871629"}'
+2019-08-06 20:40:19,889 [Thread-67:15900] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-06 20:40:19","mobile":"15570871629","msg":"OK","smsid":"18028fd7ba1c3c4e5d39323a279efc53","uid":""}
+2019-08-08 20:47:49,694 [Thread-11:11248] [apis:26] [views:get_mobile_captcha] [INFO]- 验证码是450887
+2019-08-08 20:47:49,695 [Thread-11:11248] [apis:25] [sms:send_sms] [INFO]- 即将发送短信：b'{"sid": "6c32b1ab0df397d14b18b4f599671730", "token": "245679ca256fd3af201df51c3eed8d7c", "appid": "473e1cb2d207447b802ac5345a4c5a7d", "templateid": "489851", "param": "450887,300", "mobile": "15570871629"}'
+2019-08-08 20:47:50,764 [Thread-11:11248] [apis:31] [sms:send_sms] [INFO]- 短信发送成功：{"code":"000000","count":"1","create_date":"2019-08-08 20:47:49","mobile":"15570871629","msg":"OK","smsid":"196017cd0c604e58e901cf65c4da6462","uid":""}
+2019-08-11 23:47:27,915 [Thread-29:11000] [apis:30] [views:get_mobile_captcha] [ERROR]- Error 10060 connecting to 192.168.0.112:6379. 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.

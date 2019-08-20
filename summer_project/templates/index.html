@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}首页 {% endblock %}
+
+{% block content %}
+<section class="hero-area bg-1 text-center overly">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Header Contetnt -->
+				<div class="content-block">
+					<h1>How to learn English? </h1>
+					<p>Don't think of English as too difficult, you can learn it in many ways <br>choose the one you like best</p>
+					<div class="short-popular-category-list text-center">
+						<h2>Popular Category</h2>
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a href=""><i class="fa fa-edit"></i> Inspiration/激励语录</a>
+							</li>
+							<li class="list-inline-item">
+								<a href=""><i class="fa fa-book"></i> Passages/文章</a></li>
+							<li class="list-inline-item">
+								<a href=""><i class="fa fa-film"></i> Movies/电影</a>
+							</li>
+							<li class="list-inline-item">
+								<a href=""><i class="fa fa-music"></i> Music/音乐</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<!-- Advance Search -->
+				<div class="advance-search">
+					<form action="#">
+						<div class="row">
+							<div class="col-lg-6 col-md-12" style="margin-right: auto;margin-left: auto;">
+								<div class="block d-flex" >
+									<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for keyword">
+									<button class="btn btn-main">SEARCH</button>
+								</div>
+							</div>
+                        </div>
+                        </div>
+						</div>
+					</form>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!--===================================
+=            Client Slider            =
+====================================-->
+
+
+<!--===========================================
+=            Popular deals section            =
+============================================-->
+
+<section class="popular-deals section bg-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-title">
+					<h2>English Passages</h2>
+					<p>People can't live without books as they can without air.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- offer 01 -->
+			<div class="col-sm-12 col-lg-4">
+				<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="">
+				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage01.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="">人生感悟：合适的才是最好的</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-folder-open-o"></i>By lang</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-calendar"></i>2019-07-28</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">不管是对学生来说，还是对已经奋战在职场的人来说，这都是个重大的决策。</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+			</div>
+			<div class="col-sm-12 col-lg-4">
+				<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="">
+				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage02.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="">我们都是渴望被关注的孩子</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-folder-open-o"></i>By Ding</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-calendar"></i>2019-07-29</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">爱的次数不需多，只需真爱。真爱需要时间去经营，需要用心去了解.</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+			</div>
+			<div class="col-sm-12 col-lg-4">
+				<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="">
+				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage03.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="">只有强者才懂得斗争</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-folder-open-o"></i>By Lang</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-calendar"></i>2019-07-28</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">只有强者才懂得争斗；弱者甚至失败都不够资格，而是生来就是被征服的。</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+<section class=" section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h2>Movies & Music</h2>
+					<p>Movies and music make us learn English in the most interesting way</p>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-film icon-bg-2"></i>
+								<h4>Action</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">《极限特工》 <span>93</span></a></li>
+								<li><a href="#">《第一滴血》 <span>233</span></a></li>
+								<li><a href="#">《终结者》  <span>183</span></a></li>
+								<li><a href="#">《碟中谍》 <span>343</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-bomb icon-bg-5"></i>
+								<h4>Comedy</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">《摩登时代》 <span>393</span></a></li>
+								<li><a href="#">《疯狂动物城》 <span>23</span></a></li>
+								<li><a href="#">《罗马假日》  <span>13</span></a></li>
+								<li><a href="#">《低俗小说》 <span>43</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-heart icon-bg-3"></i>
+								<h4>Love</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">《泰坦尼克号》 <span>93</span></a></li>
+								<li><a href="#">《怦然心动》 <span>23</span></a></li>
+								<li><a href="#">《傲慢与偏见》  <span>83</span></a></li>
+								<li><a href="#">《美丽心灵》 <span>33</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-paper-plane icon-bg-4"></i>
+								<h4>Cartoon</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">《疯狂动物城》 <span>53</span></a></li>
+								<li><a href="#">《玩具总动员》 <span>212</span></a></li>
+								<li><a href="#">《寻梦环游记》 <span>133</span></a></li>
+								<li><a href="#">《爱宠大机密》 <span>143</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-music icon-bg-1"></i>
+								<h4>Classical</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">You Raise Me Up <span>93</span></a></li>
+								<li><a href="#">You Are Not Alone <span>233</span></a></li>
+								<li><a href="#">Because Of You  <span>183</span></a></li>
+								<li><a href="#">Christmas In My Heart <span>343</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-tree icon-bg-6"></i>
+								<h4>Country</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">Innocence <span>193</span></a></li>
+								<li><a href="#">Say Something <span>23</span></a></li>
+								<li><a href="#">See You Again  <span>33</span></a></li>
+								<li><a href="#">Rolling In The Deep <span>73</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-server icon-bg-7"></i>
+								<h4>R&B</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">Psycho(Pt.2) <span>65</span></a></li>
+								<li><a href="#">Havana <span>23</span></a></li>
+								<li><a href="#">Worth It  <span>113</span></a></li>
+								<li><a href="#">Creep <span>43</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<i class="fa fa-fire icon-bg-8"></i>
+								<h4>Rap</h4>
+							</div>
+							<ul class="category-list" >
+								<li><a href="#">Papillon <span>93</span></a></li>
+								<li><a href="#">My Hot Girl <span>233</span></a></li>
+								<li><a href="#">You Be My Love  <span>183</span></a></li>
+								<li><a href="#">Lover Boy 88 <span>343</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+	<title>登录 | WaveAway</title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<link rel="stylesheet" href="{% static 'css/style01.css' %}" type="text/css" media="all">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <link href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+	<h1>用户登录</h1>
+
+	<div class="container w3layouts agileits">
+		<div class="register w3layouts agileits">
+			<form method="post">
+                {% csrf_token %}
+                {{ form.username }}
+                {{ form.password }}
+                {{ form.captcha }}
+                    <a href="javascript:void(0);"><img id="captcha_img" src="data:" style="width: 160px;height: 40px"></a>
+                <div>&nbsp;</div>
+                <span><a href="{% url 'accounts:password_forget' %}" style="color:white;">忘记密码？</a></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'accounts:register' %}" style="color: orange"> 新用户注册</a>
+			    <div class="send-button w3layouts agileits">
+                <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+					<input type="submit" value="登录">
+                </div>
+            </form>
+            <div style="color: red;font-size: 20px">
+                {{ msg }}
+            </div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+    <script>
+    get_captcha_img();
+    $("#captcha_img").click(get_captcha_img);
+
+    function get_captcha_img() {
+        $.ajax({
+            url: '{% url 'apis:get_captcha' %}',
+            type: 'GET',
+            dataType: 'text',
+            success: function (data) {
+                $('#captcha_img').attr('src', data);
+            }
+        });
+    }
+</script>
+
+    <script>
+    // 这里在form中定义了，如果没定义可以用jquery添加事件
+    // $("#id_captcha").blur(check_captcha);
+
+    // 当失去焦点时检查验证码
+    function check_captcha() {
+        var captcha_code = $('#id_captcha').val();
+        if (captcha_code.length == 0){
+            return false
+        }
+        $.ajax({
+            url: '{% url 'apis:check_captcha' %}',
+            type: 'GET',
+            dataType: 'json',
+            data: {"captcha_code": captcha_code},
+            success: function (data) {
+                if(data.code == 400){
+                     $('.msg').html("验证码错误");
+                }else{
+                    $('.msg').html("");
+                }
+            }
+        });
+    };
+</script>
+</body>
+<!-- //Body -->
+
+</html>

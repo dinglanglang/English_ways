@@ -1,0 +1,131 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册 | WaveAway</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="stylesheet" href="{% static 'css/style01.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/jquery.gritter.css' %}" type="text/css" media="all">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.gritter.js' %}"></script>
+</head>
+
+<body>
+	<h1>用户注册</h1>
+	<div class="container w3layouts agileits">
+		<div class="register w3layouts agileits">
+			<form id="register_form">
+                {% csrf_token %}
+			    {{ form.username }}
+                {{ form.password }}
+                {{ form.password2 }}
+                {{ form.mobile }}
+                {{ form.mobile_captcha }}
+                <input onclick="sendmessage(this,60);" type="button" value="发送短信" class="btn btn-info " style="height: 40px;width: 158px;">
+                <div>&nbsp;</div>
+			    <div class="send-button w3layouts agileits">
+                    <span class="pull-right" style="color: white"> 已有账号，<a href="{% url 'accounts:login' %}" style="color:orange">请登录</a></span>
+{#                    <div class="alert alert-block alert-danger fade in">#}
+{#                        <button data-dismiss="alert" class="close close-sm" type="button"></button>#}
+{#                    </div>>#}
+                </div>
+                <button class="btn btn-lg btn-block btn-login " type="button" id="register_btn" style="height: 40px;width: 110px">注册</button>
+            </form>
+            {{ msg }}
+
+        </div>
+			<div class="clear"></div>
+
+		<div class="clear"></div>
+
+	</div>
+
+<script>
+    function sendmessage(obj,second){
+            var telRegex = /(13|14|15|17|18)\d{9}/;
+            if(telRegex.test($.trim($("#id_mobile").val()))){
+                $.ajax({
+                    url: "{% url 'apis:mobile_captcha' %}",
+                    type: "GET",
+                    dataType: "json",
+                    data: {"mobile": $("#id_mobile").val()},
+                    success: function (data) {
+                         $.gritter.add({
+                            title: '提交结果',
+                            text: data.msg
+                        });
+                    }
+                });
+                countDown(obj,second)
+            }
+            else{
+                $.gritter.add({
+                    title: '提交结果',
+                    text: '手机号有误'
+                });
+            }
+        }
+
+        function countDown(obj,second){
+        // 如果秒数还是大于0，则表示倒计时还没结束
+         if(second>=0){
+              // 获取默认按钮上的文字
+              if(typeof buttonDefaultValue === 'undefined' ){
+                buttonDefaultValue =  obj.defaultValue;
+            }
+            // 按钮置为不可点击状态
+            obj.disabled = true;
+            // 按钮里的内容呈现倒计时状态
+            obj.value = buttonDefaultValue+'('+second+')';
+            // 时间减一
+            second--;
+            // 一秒后重复执行
+            setTimeout(function(){countDown(obj,second);},1000);
+            // 否则，按钮重置为初始状态
+            }else{
+            // 按钮置未可点击状态
+            obj.disabled = false;
+            // 按钮里的内容恢复初始状态
+            obj.value = buttonDefaultValue;
+           }
+        }
+    $("#register_btn").click(function () {
+          // some_check
+          $.ajax({
+              url: "{% url 'accounts:register' %}",
+              type: "POST",
+              dataType: "json",
+              data: $("#register_form").serialize(), // {"username":'cali'}
+              success: function (data) {
+                  if(data.status == 200 ){
+                      window.location.href='{% url 'accounts:index' %}';
+                  }
+                  else{
+                      msg = "新错误类型";
+                      if(data.status == 400 || data.status == 401){
+                          msg = data.msg
+                      }else{
+                          // 402 => form.errors
+                          for(var i in data.msg){
+                              msg = i+data.msg[i];
+                              break
+                          }
+                      }
+                       $.gritter.add({
+                          title: '提交结果',
+                          text: msg
+                      });
+                   }
+              },
+              // 解决csrftoken
+              beforeSend: function(xhr, settings) {
+                  xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+              }
+          });
+      });
+</script>
+</body>
+
+</html>
