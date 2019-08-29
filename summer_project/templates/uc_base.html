@@ -8,14 +8,18 @@
         <ul>
             {% url 'uc:profile' as uc_profile %}
             {% url 'uc:change_passwd' as uc_change_passwd %}
-            {% url 'uc:answer' as uc_answer %}
+            {% url 'repo:contribute' as repo_contribute %}
             {% url 'uc:collect' as uc_collect %}
             {% url 'uc:contribute' as uc_contribute %}
+            {% url 'uc:approval' as uc_approval %}
             <li role="presentation" class="{% if current_url == uc_profile %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"> <a href="{{ uc_profile }}">个人资料</a></li>
             <li role="presentation" class="{% if current_url == uc_change_passwd %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ uc_change_passwd }}">修改密码</a></li>
             <li role="presentation" class="{% if current_url == uc_collect %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ uc_collect }}">我的收藏</a></li>
-            <li role="presentation" class="{% if current_url == uc_answer %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ uc_answer }}">贡献语录</a></li>
+            <li role="presentation" class="{% if current_url == repo_contribute %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ repo_contribute }}">贡献语录</a></li>
             <li role="presentation" class="{% if current_url == uc_contribute %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ uc_contribute }}">我的贡献</a></li>
+            {% if perms.repo.can_change_question_status %}
+            <li role="presentation" class="{% if current_url == uc_approval %}active{% endif %} list-group-item list-group-item-light" style="font-size: 18px"><a href="{{ uc_approval }}">待审语录</a></li>
+            {% endif %}
         </ul>
       </div>
   </aside>

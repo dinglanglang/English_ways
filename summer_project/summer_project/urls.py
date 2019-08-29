@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^accounts/',include('apps.accounts.urls',namespace="accounts")),
     url(r'^apis/',include('apps.apis.urls',namespace="apis")),
     url(r'^uc/',include('apps.usercenter.urls',namespace="uc")),
+    url(r'^repo/',include('apps.repo.urls',namespace="repo")),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
+    url(r'^ckeditor/',include('ckeditor_uploader.urls')),
 ]

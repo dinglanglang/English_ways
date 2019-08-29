@@ -1,0 +1,17 @@
+{% extends 'uc_base.html' %}
+{% load staticfiles %}
+{% block title %}贡献语录 {% endblock %}
+{% block uc_content %}
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <h4>贡献语录</h4>
+                <hr/>
+                <div class="row">
+                   {{ form.inspire_content }}
+                </div>
+                <div style="height: 380px;width: 100%">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

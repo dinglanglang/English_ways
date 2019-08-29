@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}文章详情 {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="blog-posts single-post">
+                    <div class="post post-large blog-single-post">
+                        <div class="post-date">
+                            <span class="day">{{ passage_detail.passage_time }}</span>
+                        </div>
+                        <div class="post-content">
+                            <h2 style=" font-size:25px;">{{ passage_detail.passage_title }}</h2>
+                            <div class="post-meta">
+                                <span><i class="icon icon-user"></i> By <a>{{ passage_detail.passage_author }}</a> </span>
+                                <span><i class="icon icon-tag"></i> <a>美文分享</a></span>
+                            </div>
+                            <div style=" text-transform:none;">
+                                <div>
+                                    <span style="color:#FF8C00"><strong>{{ passage_detail.passage_content }}</strong></span>
+                                </div>
+                                    <br/>
+                                    <img alt="" src="{{ passage_detail.passage_picture }}"
+                                         style="height:580px; width:938px"/></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 350px;width: 100%">&nbsp;</div>
+{% endblock %}

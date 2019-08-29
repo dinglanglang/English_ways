@@ -17,12 +17,12 @@
 						<h2>Popular Category</h2>
 						<ul class="list-inline">
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-edit"></i> Inspiration/激励语录</a>
+								<a href="{% url 'repo:inspiration' %}"><i class="fa fa-edit"></i> Inspiration/激励语录</a>
 							</li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-book"></i> Passages/文章</a></li>
+								<a href="{% url 'repo:passage' %}"><i class="fa fa-book"></i> Passages/文章</a></li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-film"></i> Movies/电影</a>
+								<a href="{% url 'repo:movie_love' %}"><i class="fa fa-film"></i> Movies/电影</a>
 							</li>
 							<li class="list-inline-item">
 								<a href=""><i class="fa fa-music"></i> Music/音乐</a>
@@ -45,9 +45,7 @@
                         </div>
 						</div>
 					</form>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -80,12 +78,12 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="">
+			<a href="{% url 'repo:passage_detail' %}?id=957" >
 				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage01.jpg' %}" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="">人生感悟：合适的才是最好的</a></h4>
+		    <h4 class="card-title"><a href="{% url 'repo:passage_detail' %}?id=957">人生感悟：合适的才是最好的</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href=""><i class="fa fa-folder-open-o"></i>By lang</a>
@@ -117,12 +115,12 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="">
+			<a href="{% url 'repo:passage_detail' %}?id=958">
 				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage02.jpg' %}" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="">我们都是渴望被关注的孩子</a></h4>
+		    <h4 class="card-title"><a href="{% url 'repo:passage_detail' %}?id=958">我们都是渴望被关注的孩子</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href=""><i class="fa fa-folder-open-o"></i>By Ding</a>
@@ -152,12 +150,12 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="">
+			<a href="{% url 'repo:passage_detail' %}?id=959">
 				<img class="card-img-top img-fluid" src="{% static 'images/passage/passage03.jpg' %}" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="">只有强者才懂得斗争</a></h4>
+		    <h4 class="card-title"><a href="{% url 'repo:passage_detail' %}?id=959">只有强者才懂得斗争</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href=""><i class="fa fa-folder-open-o"></i>By Lang</a>

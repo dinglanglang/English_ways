@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}音乐-经典 {% endblock %}
+{% load staticfiles %}
+{% block content %}
+<section class="dashboard section">
+			<div class="col-md-8" style="margin-left: auto;margin-right: auto">
+				<!-- Recently Favorited -->
+				<div class="widget dashboard-container my-adslist">
+					<h2 class="widget-header">Classical/古典乐</h2>
+					<table class="table product-dashboard-table">
+						<thead>
+							<tr>
+								<th>歌名</th>
+								<th>歌手</th>
+								<th class="text-center">类型</th>
+								<th class="text-center">专辑</th>
+							</tr>
+						</thead>
+							<tr>
+								<td class="product-thumb">
+									<img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description"></td>
+								<td class="product-details">
+									<h3 class="title">Macbook Pro 15inch</h3>
+									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
+									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
+									<span class="status active"><strong>Status</strong>Active</span>
+									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
+								</td>
+								<td class="product-category"><span class="categories">Laptops</span></td>
+								<td class="action" data-title="Action">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li class="list-inline-item">
+												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+													<i class="fa fa-eye"></i>
+												</a>		
+											</li>
+											<li class="list-inline-item">
+												<a class="delete" href="">
+													<i class="fa fa-trash"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+                    </table>
+                </div>
+            </div>
+</section>
+{% endblock %}

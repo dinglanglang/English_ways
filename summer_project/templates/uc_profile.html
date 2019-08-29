@@ -87,11 +87,10 @@
             data: $("#form").serialize(),
             dataType: "json",
             success: function (result) {
-{#                console.log(result.msg);#}
-                alert("提交成功")
+                alert(result["msg"])
             },
             error:function () {
-                alert("提交失败")
+                alert(result["msg"])
             }
         })
     })
@@ -119,13 +118,6 @@
                     <img alt="" src="" id="image">
                 </div>
                 <div class="up-pre-after up-frame-radius">
-                </div>
-            </div>
-            <div class="am-g am-fl">
-                <div class="up-control-btns">
-                    <span class="am-icon-rotate-left" onclick="rotateimgleft()"></span>
-                    <span class="am-icon-rotate-right" onclick="rotateimgright()"></span>
-                    <span class="am-icon-check" id="up-btn-ok" url="{% url 'apis:change_avator' %}"></span>
                 </div>
             </div>
         </div>

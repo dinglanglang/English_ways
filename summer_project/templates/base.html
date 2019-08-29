@@ -17,8 +17,9 @@
   <link href="{% static 'plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 {#    <link href="{% static 'img/favicon.png' %}" rel="shortcut icon">#}
+    </head>
 {% endblock %}
-</head>
+
 <body class="body-wrapper">
 
 <section>
@@ -29,25 +30,21 @@
 						<img src="{% static 'images/logo.jpg' %}" alt="">
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav">
-							<li class="nav-item active">
+                            {% url 'accounts:index' as accounts_index %}
+                            {% url 'repo:inspiration' as repo_inspiration %}
+                            {% url 'repo:passage' as repo_passage %}
+                            {% url 'repo:movie_action' as repo_movie_action %}
+                            {% url 'repo:movie_comedy' as repo_movie_comedy %}
+                            {% url 'repo:movie_cartoon' as repo_movie_cartoon %}
+                            {% url 'repo:movie_love' as repo_movie_love %}
+							<li class="nav-item {% if current_url == accounts_index %}active{% endif %}">
 								<a class="nav-link" href="{% url 'accounts:index' %}">HOME</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">INSPIRATION</a>
+							<li class="nav-item {% if current_url == repo_inspiration %}active{% endif %}">
+								<a class="nav-link" href="{% url 'repo:inspiration' %}">INSPIRATION</a>
 							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									PASSAGES <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Life/生活</a>
-									<a class="dropdown-item" href="#">Science/科技</a>
-									<a class="dropdown-item" href="#">Foods/美食</a>
-									<a class="dropdown-item" href="#">Sports/运动</a>
-									<a class="dropdown-item" href="#">Entertainment/娱乐</a>
-									<a class="dropdown-item" href="#">Travel/旅行</a>
-								</div>
+                            <li class="nav-item {% if current_url == repo_passage %}active{% endif %}">
+								<a class="nav-link" href="{% url 'repo:passage' %}">PASSAGE</a>
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,10 +52,10 @@
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action/动作</a>
-									<a class="dropdown-item" href="#">Comedy/喜剧</a>
-									<a class="dropdown-item" href="#">Love/爱情</a>
-									<a class="dropdown-item" href="#">Cartoon/卡通</a>
+                                    <a class="dropdown-item {% if current_url == repo_movie_love %}active{% endif %}" href="{% url "repo:movie_love" %}">Love/爱情</a>
+                                    <a class="dropdown-item {% if current_url == repo_movie_cartoon %}active{% endif %}" href="{% url 'repo:movie_cartoon' %}">Cartoon/卡通</a>
+									<a class="dropdown-item {% if current_url == repo_movie_comedy %}active{% endif %}" href="{% url 'repo:movie_comedy' %}">Comedy/喜剧</a>
+                                    <a class="dropdown-item {% if current_url == repo_movie_action %}active{% endif %}" href="{% url "repo:movie_action" %}">Action/动作</a>
 								</div>
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
@@ -67,7 +64,7 @@
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Classical/古典乐</a>
+									<a class="dropdown-item" href="{% url 'repo:music_classical' %}">Classical/古典乐</a>
 									<a class="dropdown-item" href="#">Country/乡村音乐</a>
 									<a class="dropdown-item" href="#">Jazz/爵士乐</a>
 									<a class="dropdown-item" href="#">Rock/摇滚乐</a>
@@ -77,18 +74,18 @@
                  {% if user.is_authenticated %}
                     <ul class="navbar-nav ml-auto mt-10">
                         <li class="nav-item">
-                            <a class="nav-link login-button" href="{% url 'accounts:logout' %}"> 注销</a>
+                            <a class="nav-link login-button" href="{% url 'accounts:logout' %}">注销</a>
                         </li>
 
                         <li class="nav-item dropdown dropdown-slide">
-							<a data-toggle="dropdown" class="dropdown-toggle add-button nav-link" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-user-circle"></i> 个人中心</a>
+							<a data-toggle="dropdown" class="dropdown-toggle add-button nav-link" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-user-circle"></i>&nbsp; {{ user }}</a>
                               <ul class="dropdown-menu dropdown-menu-right">
                                   <li><a class="dropdown-item" href="{% url 'uc:profile' %}"> 个人资料 </a></li>
                                   <li><a class="dropdown-item" href="{% url 'uc:change_passwd' %}"> 修改密码 </a></li>
                                   <li><a class="dropdown-item" href="#"> 我的收藏 </a></li>
                                   <li><a class="dropdown-item" href="#"> 贡献语录 </a></li>
                                   <li><a class="dropdown-item" href="#"> 我的贡献 </a></li>
-                                  <li><a class="dropdown-item" href="{% url 'accounts:index' %}"> 退出 </a></li>
+                                  <li><a class="dropdown-item" href="{% url 'accounts:index' %}">退出</a></li>
                               </ul>
                         </li>
                     </ul>

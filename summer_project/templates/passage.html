@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block title %}文章 {% endblock %}
+{% block content %}
+    <section class="page-title">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <!-- Title text -->
+                    <h3>PASSAGE</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
+                    {% for item in passage %}
+                        <article>
+                            <div class="image">
+                                <img src="{{ item.passage_picture }}">
+                            </div>
+                            <h3>{{ item.passage_title }}</h3>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">by <a href="">{{ item.passage_author }}</a></li>
+                                <li class="list-inline-item">{{ item.passage_time }}</li>
+                            </ul>
+                            {#                            <p style="">{{ item.passage_content }}</p>#}
+                            <!-- Read more button -->
+                            <a href="{% url 'repo:passage_detail' %}?id={{ item.id }}" class="btn btn-transparent">Read
+                                More</a>
+                        </article>
+                    {% endfor %}
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                        {% for i in paginator %}
+                            <li class="page-item {% if i == passage.number %}active{% endif %}"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endfor %}
+                            <li class="page-item">
+                                {% if passage.has_next %}
+                                <a class="page-link" href="?page={{ passage.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                {% endif %}
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+                        <div class="sidebar">
+                            <!-- Search Widget -->
+                            <div class="widget search p-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="expire" placeholder="Search..." value="{{ search_key }}">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                                        <!-- Category Widget -->
+                                        <div class="widget category">
+                                            <!-- Widget Header -->
+                                            <h5 class="widget-header">Views</h5>
+                                            {% for item in passage %}
+                                            <ul class="category-list">
+                                                <li><a href="{% url 'repo:passage_detail' %}?id={{ item.id }}">{{ item.passage_title }}</a></li>
+                                            </ul>
+                                            {% endfor %}
+                                        </div>
+                        </div>
+                {#                        <!-- Store Widget -->#}
+                {#                        <div class="widget related-store">#}
+                {#                            <!-- Widget Header -->#}
+                {#                            <h5 class="widget-header">Related Store</h5>#}
+                {#                            <ul class="store-list md list-inline">#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-02.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-03.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-04.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-05.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-06.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                                <li class="list-inline-item">#}
+                {#                                    <a href=""><img src="images/popular-offer/populer-offer-07.png"#}
+                {#                                                    alt="store-image"></a>#}
+                {#                                </li>#}
+                {#                            </ul>#}
+                {#                        </div>#}
+                {#                        <!-- Archive Widget -->#}
+                {#                        <div class="widget archive">#}
+                {#                            <!-- Widget Header -->#}
+                {#                            <h5 class="widget-header">Archives</h5>#}
+                {#                            <ul class="archive-list">#}
+                {#                                <li><a href="">January 2017</a></li>#}
+                {#                                <li><a href="">February 2017</a></li>#}
+                {#                                <li><a href="">March 2017</a></li>#}
+                {#                                <li><a href="">April 2017</a></li>#}
+                {#                                <li><a href="">May 2017</a></li>#}
+                {#                            </ul>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+                {#        </div>#}
+    </section>
+{% endblock %}

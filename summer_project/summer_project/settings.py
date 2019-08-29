@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'apps.apis',
     'apps.repo',
     'easy_thumbnails',
+    'ckeditor',
+    'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -221,6 +224,8 @@ if not os.path.exists(MEDIA_ROOT):
     os.mkdir(MEDIA_ROOT)
 MEDIA_URL = '/media/'
 
+CKEDITOR_UPLOAD_PATH = "ckeditor_upload"
+
 FontPath = os.path.join(BASE_DIR,'static/plugins/font-awesome/fonts/')
 
 THUMBNAIL_ALIASES = {
@@ -229,13 +234,24 @@ THUMBNAIL_ALIASES = {
         # avatar: 表示将来引用的名字
         # crop: False=> 不裁剪、同比例缩小
         'avatar': {'size': (50, 50), 'crop': True},
+        'passage': {'size': (200,200),'crop':True},
     },
-    # 'accounts': {
-    #     'xs': {'size': (30, 30), 'crop': True},
-    #     'xs_nocorp': {'size': (30, 30), 'crop': False},
+    # 'repo': {
+    #      'passage': {'size': (200,200),'crop':True},
     # },
 }
 
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+    'default_ckeditor':{
+        'toolbar': 'Full',
+    },
+    'default': {
+        'toolbar': 'Full',
+    },
+}
 
 CACHES = {
     'default': {
@@ -250,8 +266,8 @@ CACHES = {
     },
 }
 
-DEFAULT_FROM_EMAIL = '1303342763@qq.com'
 
+DEFAULT_FROM_EMAIL = '1303342763@qq.com'
 # 163邮箱SMTP服务器地址
 EMAIL_HOST = 'smtp.qq.com'
 # 发件人的邮箱

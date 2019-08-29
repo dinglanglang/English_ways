@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}激励墙 {% endblock %}
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+				<div class="sidebar">
+					<div class="widget user-dashboard-profile">
+						<div class="profile-thumb">
+							<img src="{{ user.avator_sor.url }}" alt="" class="rounded-circle">
+						</div>
+						<h5 class="text-center">{{ user }}</h5>
+						<p>{{ user.email }}</p>
+						<a href="{% url  'uc:profile' %}" class="btn btn-main-sm">修改资料</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+				<div class="widget dashboard-container my-adslist">
+					<h2 style="margin-left: 220px">Inspration/激励语录</h2>
+                    <hr><br/>
+					<table class="product-dashboard-table">
+						<thead>
+							<tr>
+								<th>头像</th>
+								<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语录</th>
+								<th class="text-center">时间</th>
+								<th class="text-center">作者</th>
+							</tr>
+						</thead>
+						<tbody>
+{#                        {% if inspiration %}#}
+                        {% for item in users %}
+                            <tr>
+                                <td class="product-thumb">
+                                    <img width="80px" height="auto" src="{{ item.avator_sor.url }}" alt="{{ item }}"></td>
+                                <td class="product-details">
+                                    <h3 class="title" style="margin-left:50px;font-size: 30px">
+                                     {% for inspiration in item.inspiration_set.all %}
+                                         {{ inspiration.inspire_content|safe }}
+                                    {% endfor %}
+                                    </h3>
+                                </td>
+                                <td class="product-category"><span class="categories">
+                                    {{ item.inspiration_set.all.0.inspire_time }}</span></td>
+                                <td class="product-category"><span class="categories">
+                                    {{ item.username }}</span></td>
+                            </tr>
+                        {% endfor %}
+{#                        {% endif %}#}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

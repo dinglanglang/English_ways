@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="b802aba8-1edf-490b-b538-077cef54d8f7">
+    <data-source source="LOCAL" name="db" uuid="e2c002ba-3b69-4a18-b8b8-143b5482cca8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>SQLite</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\chen\Desktop\丁浪的文件\summer_project\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\chen\Desktop\丁浪的文件\English_ways\summer_project\db.sqlite3</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

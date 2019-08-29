@@ -1,0 +1,60 @@
+{% extends 'uc_base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% block title %}待审语录 {% endblock %}
+{% block uc_content %}
+
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <h4>审核语录</h4>
+                <hr/>
+                <div class="row">
+                     <table class="table table-striped border-top" id="sample_1">
+              <thead>
+              <tr>
+
+                  <th class="hidden-phone">语录</th>
+                  <th class="hidden-phone">时间</th>
+                  <th class="hidden-phone">贡献者</th>
+                  <th class="hidden-phone">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              {# 所有待审核的题目： Questions.objects.exclude(status=True) #}
+              {% for check in inspiration %}
+              <tr class="odd gradeX">
+                  <td><a href="javascript:void(0);">{{ check.inspire_content|safe }}</a></td>
+                  <td><a href="javascript:void(0);">{{ check.inspire_time|date:"Y-m-d" }}</a></td>
+                  <td><a href="javascript:void(0);">{{ check.contributor|safe }}</a></td>
+                  <td><input type="button" value="通过" onclick="pass(this,{{ check.id }})"></td>
+              </tr>
+              {% endfor %}
+              </tbody>
+              </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 380px;width: 100%">&nbsp;</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/jquery.js' %}" charset="utf-8"></script>
+<script>
+    function pass(obj,id) {
+        $.ajax(
+            {
+                // 将question的状态改为True
+                // 此接口权限=> can_change_question_status
+                url:'/uc/approval/'+id+'/',
+                success: function (data) {
+                    // 即将删除的那一行数据
+                    mynode = obj.parentNode.parentNode;
+                    mynode.parentNode.removeChild(mynode);
+                }
+            }
+        )
+    }
+</script>
+{% endblock%}
