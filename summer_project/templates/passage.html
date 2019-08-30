@@ -55,10 +55,13 @@
                         <div class="sidebar">
                             <!-- Search Widget -->
                             <div class="widget search p-0">
+                                 <form action="{% url 'repo:passage' %}" method="get">
+                                 {% csrf_token %}
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="expire" placeholder="Search..." value="{{ search_key }}">
-                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <input type="text" class="form-control"  id="search" name="search" placeholder="Search..." value="{{ search_key }}">
+                                    <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                                         <!-- Category Widget -->

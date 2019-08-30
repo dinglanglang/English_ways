@@ -7,8 +7,14 @@
             <div class="panel-body">
                 <h4>贡献语录</h4>
                 <hr/>
-                <div class="row">
-                   {{ form.inspire_content }}
+                <div class="row" style="margin-left: 100px">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.inspire_content }}
+                        <div style="margin-left: 150px">
+                            <button type="submit" class="input-group-addon"><i class="fa fa-check"></i></button>
+                        </div>
+                    </form>
                 </div>
                 <div style="height: 380px;width: 100%">&nbsp;</div>
             </div>

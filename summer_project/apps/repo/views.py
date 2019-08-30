@@ -23,23 +23,49 @@ class PassageDetail(View):
             return HttpResponse("页面不存在")
         return render(request,'passage_detail.html',{"passage_detail":passage_detail[0]})
 
-def contribute(request):
-    form = Contribute_Form()
-    return render(request,'crontribute_modal.html',{'form':form})
+
+class contribute(View):
+    def get(self,request):
+        form = Contribute_Form
+        return render(request,'crontribute_modal.html',{'form':form})
+
+    def post(self,request):
+        inspire_content=request.POST.get("inspire_content")
+        print(inspire_content)
+        form = Contribute_Form
+        # inspire_content = form.cleaned_data["inspire_content"]
+        # print(inspire_content)
+        if len(inspire_content) > 8:
+            text = Inspiration.objects.create(inspire_content=inspire_content)
+            text.save()
+            msg = "提交成功，请等待管理员审核"
+        else:
+            msg = "字数未达8个字，请重新填写"
+        return render(request,"crontribute_modal.html",{"msg":msg,'form':form})
+
+
+
+
+
+
 
 
 def passage(request):
     passage = Passage.objects.all()
+    #搜索功能
+    if request.GET.get('search') is not None:
+        search = request.GET.get('search')
+        passage = Passage.objects.filter(Q(passage_title__contains=search)|Q(passage_author__icontains=search)|Q(passage_content__contains=search))
     paginator = Paginator(passage, 4)
     page = request.GET.get('page')
-    # print(passage[0].id)
     try:
         passage = paginator.page(page)
     except PageNotAnInteger:
         passage = paginator.page(1)
     except EmptyPage:
         passage = paginator.page(paginator.num_pages)
-    return render(request,"passage.html",{"passage":passage,"paginator":paginator.page_range})
+    kwgs = {"passage":passage,"paginator":paginator.page_range}
+    return render(request,"passage.html",kwgs)
 
 def movie_love(request):
     movie = Movie.objects.filter(movie_type="Love")
