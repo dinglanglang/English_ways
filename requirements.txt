@@ -21,7 +21,7 @@ numpy==1.16.0
 openpyxl==2.5.12
 parsel==1.5.1
 pep8==1.7.1
-Pillow==5.4.1
+Pillow==8.3.2
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
 pycparser==2.19
