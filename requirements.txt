@@ -17,7 +17,7 @@ IPy==1.0
 jdcal==1.4
 jieba==0.39
 lxml==4.2.5
-numpy==1.16.0
+numpy==1.22.0
 openpyxl==2.5.12
 parsel==1.5.1
 pep8==1.7.1
