@@ -16,7 +16,7 @@ ipaddress==1.0.22
 IPy==1.0
 jdcal==1.4
 jieba==0.39
-lxml==4.2.5
+lxml==4.9.1
 numpy==1.16.0
 openpyxl==2.5.12
 parsel==1.5.1
